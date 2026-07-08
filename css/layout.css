@@ -1001,6 +1001,16 @@
     padding: var(--space-sm) 0;
   }
 
+  /* Override transparent-header white links — mobile panel is always white */
+  .header__nav .header__link {
+    color: var(--color-text);
+  }
+
+  .header__nav .header__link:hover,
+  .header__nav .header__link.active {
+    color: var(--color-dark-green);
+  }
+
   .footer__grid {
     grid-template-columns: repeat(2, 1fr);
   }
