@@ -8,21 +8,21 @@ const SEO_CONFIG = {
   phone: '+91-6232323482',
   email: 'info@kalpvrikshhospitality.com',
   address: {
-    locality: 'Gurugram',
-    region: 'Haryana',
+    locality: 'Noida',
+    region: 'Uttar Pradesh',
     country: 'IN',
   },
   pages: {
     home: {
       title: 'Kalpvriksh Hospitality | International & Domestic Tour Packages in India',
-      description: 'Book international & domestic tour packages with Kalpvriksh Hospitality, Gurugram. Dubai, Thailand, Kashmir tours, flights, visa assistance & forex. Trusted by 10,000+ travellers.',
+      description: 'Book international & domestic tour packages with Kalpvriksh Hospitality, Noida. Dubai, Thailand, Kashmir tours, flights, visa assistance & forex. Trusted by 10,000+ travellers.',
       path: '/index.html',
       image: 'img/hero/hero.jpg',
       type: 'website',
     },
     about: {
       title: 'About Us | Kalpvriksh Hospitality – Premium Travel Agency India',
-      description: 'Meet the Kalpvriksh Hospitality team. A Gurugram-based travel agency crafting premium domestic and international journeys with personalized service since day one.',
+      description: 'Meet the Kalpvriksh Hospitality team. A Noida-based travel agency crafting premium domestic and international journeys with personalized service since day one.',
       path: '/about.html',
       image: 'img/page-hero/about.jpg',
       type: 'website',
@@ -36,7 +36,7 @@ const SEO_CONFIG = {
     },
     flights: {
       title: 'Flight Booking | Domestic & International Flights | Kalpvriksh',
-      description: 'Book domestic and international flights at best fares with Kalpvriksh Hospitality. Group bookings, corporate travel, and 24/7 flight support from Gurugram, India.',
+      description: 'Book domestic and international flights at best fares with Kalpvriksh Hospitality. Group bookings, corporate travel, and 24/7 flight support from Noida, India.',
       path: '/flights.html',
       image: 'img/page-hero/flights.jpg',
       type: 'website',
@@ -50,14 +50,14 @@ const SEO_CONFIG = {
     },
     forex: {
       title: 'Forex Services | Currency Exchange & Travel Cards | Kalpvriksh',
-      description: 'Get the best forex rates for international travel. Currency exchange, prepaid travel cards, and home delivery from Kalpvriksh Hospitality, Gurugram.',
+      description: 'Get the best forex rates for international travel. Currency exchange, prepaid travel cards, and home delivery from Kalpvriksh Hospitality, Noida.',
       path: '/forex.html',
       image: 'img/page-hero/forex.jpg',
       type: 'website',
     },
     contact: {
       title: 'Contact Us | Plan Your Trip | Kalpvriksh Hospitality',
-      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482, email info@kalpvrikshhospitality.com, or visit us in Gurugram, Haryana.',
+      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482, email info@kalpvrikshhospitality.com, or visit us in Noida, Uttar Pradesh.',
       path: '/contact.html',
       image: 'img/page-hero/contact.jpg',
       type: 'website',
