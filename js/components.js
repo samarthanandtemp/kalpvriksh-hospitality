@@ -12,7 +12,7 @@ const SITE = {
 
   email: 'info@kalpvrikshhospitality.com',
 
-  address: 'Gurugram, Haryana',
+  address: 'H-61, Sec-63, Noida, Uttar Pradesh, 201301',
 
   whatsapp: '916232323482',
 
