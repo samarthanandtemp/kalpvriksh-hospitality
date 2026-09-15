@@ -6,10 +6,20 @@ const SEO_CONFIG = {
   defaultImage: 'img/hero/hero.jpg',
   themeColor: '#4E8A1F',
   phone: '+91-6232323482',
+  phoneAlt: '+91-8796882039',
   email: 'info@kalpvrikshhospitality.com',
   address: {
+    street: 'H-61, Sec-63',
     locality: 'Noida',
     region: 'Uttar Pradesh',
+    postalCode: '201301',
+    country: 'IN',
+  },
+  addressAlt: {
+    street: '38/1, Parwati Kunj 2nd, Gangapur Pahari, Moradabad Kashipur Road',
+    locality: 'Ramnagar',
+    region: 'Uttarakhand',
+    postalCode: '244715',
     country: 'IN',
   },
   pages: {
@@ -57,7 +67,7 @@ const SEO_CONFIG = {
     },
     contact: {
       title: 'Contact Us | Plan Your Trip | Kalpvriksh Hospitality',
-      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482, email info@kalpvrikshhospitality.com, or visit us in Noida, Uttar Pradesh.',
+      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482 or +91 8796882039, email info@kalpvrikshhospitality.com, or visit us in Noida or Ramnagar.',
       path: '/contact.html',
       image: 'img/page-hero/contact.jpg',
       type: 'website',
@@ -153,14 +163,26 @@ function getTravelAgencySchema() {
     logo: absoluteUrl('img/logo.png'),
     image: absoluteUrl(SEO_CONFIG.defaultImage),
     description: 'Premium travel agency offering international and domestic tour packages, flights, visa assistance, and forex services in India.',
-    telephone: SEO_CONFIG.phone,
+    telephone: [SEO_CONFIG.phone, SEO_CONFIG.phoneAlt],
     email: SEO_CONFIG.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: SEO_CONFIG.address.locality,
-      addressRegion: SEO_CONFIG.address.region,
-      addressCountry: SEO_CONFIG.address.country,
-    },
+    address: [
+      {
+        '@type': 'PostalAddress',
+        streetAddress: SEO_CONFIG.address.street,
+        addressLocality: SEO_CONFIG.address.locality,
+        addressRegion: SEO_CONFIG.address.region,
+        postalCode: SEO_CONFIG.address.postalCode,
+        addressCountry: SEO_CONFIG.address.country,
+      },
+      {
+        '@type': 'PostalAddress',
+        streetAddress: SEO_CONFIG.addressAlt.street,
+        addressLocality: SEO_CONFIG.addressAlt.locality,
+        addressRegion: SEO_CONFIG.addressAlt.region,
+        postalCode: SEO_CONFIG.addressAlt.postalCode,
+        addressCountry: SEO_CONFIG.addressAlt.country,
+      },
+    ],
     areaServed: { '@type': 'Country', name: 'India' },
     priceRange: '₹₹',
     sameAs: [
