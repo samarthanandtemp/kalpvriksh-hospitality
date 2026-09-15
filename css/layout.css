@@ -820,6 +820,12 @@
   margin-top: 2px;
 }
 
+.footer__contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .footer__bottom {
   border-top: 1px solid rgba(127, 199, 53, 0.2);
   padding-top: var(--space-xl);
