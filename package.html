@@ -2,11 +2,25 @@
 <html lang="en" data-seo="package">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      var id = new URLSearchParams(location.search).get('id');
+      if (id) location.replace('package/' + encodeURIComponent(id) + '/');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Explore curated tour package details — itinerary, inclusions, pricing, and booking with Kalpvriksh Hospitality.">
   <title>Tour Package Details | Kalpvriksh Hospitality</title>
   <link rel="icon" href="img/logo.png" type="image/png">
   <link rel="apple-touch-icon" href="img/logo.png">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RED0KG046M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RED0KG046M');
+  </script>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/seo.js"></script>
 </head>

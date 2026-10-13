@@ -7,12 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/index.html</loc>
-    <lastmod>2026-07-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://www.kalpvrikshhospitality.com/about.html</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
@@ -61,109 +55,121 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=dubai</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/dubai/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=thailand</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/thailand/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=bali</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/bali/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=singapore</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/singapore/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=maldives</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/maldives/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=europe</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/mauritius/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kalpvrikshhospitality.com/package/europe/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=vietnam</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/vietnam/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=kashmir</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/kashmir/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=kerala</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/kerala/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=ladakh</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/ladakh/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=andaman</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/andaman/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=goa</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/goa/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=himachal</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/himachal/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=uttarakhand</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/uttarakhand/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/package.html?id=rajasthan</loc>
+    <loc>https://www.kalpvrikshhospitality.com/package/rishikesh-mussoorie/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.kalpvrikshhospitality.com/package/rajasthan/</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/blog.html?id=europe-destinations-2026</loc>
+    <loc>https://www.kalpvrikshhospitality.com/blog/europe-destinations-2026/</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/blog.html?id=packing-tips</loc>
+    <loc>https://www.kalpvrikshhospitality.com/blog/packing-tips/</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.kalpvrikshhospitality.com/blog.html?id=thailand-visa</loc>
+    <loc>https://www.kalpvrikshhospitality.com/blog/thailand-visa/</loc>
     <lastmod>2026-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
