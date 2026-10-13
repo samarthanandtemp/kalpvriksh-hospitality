@@ -138,6 +138,39 @@ a.card-link:hover .btn--primary {
   color: var(--color-text);
 }
 
+.package-table-wrap {
+  overflow-x: auto;
+  margin-top: var(--space-lg);
+}
+
+.package-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  min-width: 720px;
+}
+
+.package-table th,
+.package-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--color-border);
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.package-table thead th {
+  background: var(--color-forest-green);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.package-table tbody th {
+  background: #f4f8ef;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 .package-highlights {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1706,7 +1739,9 @@ a.card-link:hover .btn--primary {
 }
 
 .package-hero__content h1 {
-  font-size: clamp(2rem, 5vw, var(--font-size-5xl));
+  font-size: clamp(2rem, 4vw, var(--font-size-4xl));
+  max-width: 18em;
+  line-height: 1.15;
 }
 
 .package-hero__tagline {
