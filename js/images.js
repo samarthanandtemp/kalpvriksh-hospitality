@@ -44,6 +44,8 @@ const IMAGES = {
 
     maldives: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80',
 
+    mauritius: 'https://images.unsplash.com/photo-1548574505-5e239809ee19?auto=format&fit=crop&w=800&q=80',
+
     europe: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=800&q=80',
 
     vietnam: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
@@ -67,6 +69,8 @@ const IMAGES = {
     himachal: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80',
 
     uttarakhand: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80',
+
+    rishikesh: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80',
 
     rajasthan: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80',
 
@@ -188,6 +192,8 @@ const IMAGE_MAP = {
 
   'img/destinations/maldives.jpg': IMAGES.destinations.maldives,
 
+  'img/destinations/mauritius.jpg': IMAGES.destinations.mauritius,
+
   'img/destinations/europe.jpg': IMAGES.destinations.europe,
 
   'img/destinations/vietnam.jpg': IMAGES.destinations.vietnam,
@@ -205,6 +211,8 @@ const IMAGE_MAP = {
   'img/domestic/himachal.jpg': IMAGES.domestic.himachal,
 
   'img/domestic/uttarakhand.jpg': IMAGES.domestic.uttarakhand,
+
+  'img/domestic/rishikesh.jpg': IMAGES.domestic.rishikesh,
 
   'img/domestic/rajasthan.jpg': IMAGES.domestic.rajasthan,
 

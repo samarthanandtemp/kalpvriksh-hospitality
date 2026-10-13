@@ -2,6 +2,24 @@ const SEO_CONFIG = {
   siteUrl: 'https://www.kalpvrikshhospitality.com',
   siteName: 'Kalpvriksh Hospitality',
   tagline: 'Journeys That Inspire',
+  keywords: [
+    'Best Travel Agency in India',
+    'Kerala Tour Packages for 5 Days',
+    'Kashmir Luxury Tour Packages',
+    'Ladakh Group Tour Packages',
+    'Shimla Manali Tour Package for Couple',
+    'Delhi to Bali Tour Packages',
+    'Customized Kashmir Holiday Package',
+    'Tailor Made Kerala Tour Package',
+    'Custom Ladakh Adventure Trip',
+    'Personalized Goa Family Vacation Package',
+    '4 Nights 5 Days Andaman Package',
+    'Customized Dubai Tour Package',
+    'Tailor Made Bali Honeymoon Itinerary',
+    'Custom Thailand Holiday Package',
+    'Personalized Maldives Luxury Package',
+    'International Customized Packages',
+  ],
   locale: 'en_IN',
   defaultImage: 'img/hero/hero.jpg',
   themeColor: '#4E8A1F',
@@ -24,22 +42,22 @@ const SEO_CONFIG = {
   },
   pages: {
     home: {
-      title: 'Kalpvriksh Hospitality | International & Domestic Tour Packages in India',
-      description: 'Book international & domestic tour packages with Kalpvriksh Hospitality, Noida. Dubai, Thailand, Kashmir tours, flights, visa assistance & forex. Trusted by 10,000+ travellers.',
-      path: '/index.html',
+      title: 'Best Travel Agency in India | Kalpvriksh Hospitality',
+      description: 'Kalpvriksh Hospitality is a best travel agency in India for international customized packages — Kerala, Kashmir, Ladakh, Bali, Dubai, Thailand, Maldives, Goa, Andaman, and Shimla Manali.',
+      path: '/',
       image: 'img/hero/hero.jpg',
       type: 'website',
     },
     about: {
-      title: 'About Us | Kalpvriksh Hospitality – Premium Travel Agency India',
+      title: 'Best Travel Agency in India | About Kalpvriksh Hospitality',
       description: 'Meet the Kalpvriksh Hospitality team. A Noida-based travel agency crafting premium domestic and international journeys with personalized service since day one.',
       path: '/about.html',
       image: 'img/page-hero/about.jpg',
       type: 'website',
     },
     destinations: {
-      title: 'Tour Destinations | International & Domestic Packages | Kalpvriksh',
-      description: 'Explore trending tour destinations — Dubai, Thailand, Bali, Maldives, Kashmir, Kerala, Ladakh & more. Curated holiday packages from Kalpvriksh Hospitality, India.',
+      title: 'International Customized Packages | Kalpvriksh Hospitality',
+      description: 'International customized packages and domestic holidays — Kerala tour packages for 5 days, Kashmir luxury tours, Ladakh group trips, Bali, Dubai, Thailand, Maldives, Goa, and Andaman.',
       path: '/destinations.html',
       image: 'img/destinations/dubai.jpg',
       type: 'website',
@@ -60,14 +78,14 @@ const SEO_CONFIG = {
     },
     forex: {
       title: 'Forex Services | Currency Exchange & Travel Cards | Kalpvriksh',
-      description: 'Get the best forex rates for international travel. Currency exchange, prepaid travel cards, and home delivery from Kalpvriksh Hospitality, Noida.',
+      description: 'Book domestic and international flights at best fares with Kalpvriksh Hospitality. Group bookings, corporate travel, and 24/7 flight support from Noida, India.',
       path: '/forex.html',
       image: 'img/page-hero/forex.jpg',
       type: 'website',
     },
     contact: {
       title: 'Contact Us | Plan Your Trip | Kalpvriksh Hospitality',
-      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482 or +91 8796882039, email info@kalpvrikshhospitality.com, or visit us in Noida or Ramnagar.',
+      description: 'Contact Kalpvriksh Hospitality to plan your dream trip. Call +91 6232323482, email info@kalpvrikshhospitality.com, or visit us in Noida, Haryana.',
       path: '/contact.html',
       image: 'img/page-hero/contact.jpg',
       type: 'website',
@@ -107,6 +125,20 @@ function absoluteUrl(path) {
   const base = SEO_CONFIG.siteUrl.replace(/\/$/, '');
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return `${base}${normalized}`;
+}
+
+function normalizeKeywords(keywords) {
+  const source = [...(Array.isArray(keywords) ? keywords : []), ...SEO_CONFIG.keywords];
+  const seen = new Set();
+  const unique = [];
+  source.forEach((item) => {
+    const value = String(item || '').trim();
+    const key = value.toLowerCase();
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    unique.push(value);
+  });
+  return unique.join(', ');
 }
 
 function setMetaTag(name, content) {
@@ -162,7 +194,7 @@ function getTravelAgencySchema() {
     url: SEO_CONFIG.siteUrl,
     logo: absoluteUrl('img/logo.png'),
     image: absoluteUrl(SEO_CONFIG.defaultImage),
-    description: 'Premium travel agency offering international and domestic tour packages, flights, visa assistance, and forex services in India.',
+    description: 'Best travel agency in India for international customized packages, domestic holidays, flights, visa assistance, and forex services.',
     telephone: [SEO_CONFIG.phone, SEO_CONFIG.phoneAlt],
     email: SEO_CONFIG.email,
     address: [
@@ -187,6 +219,9 @@ function getTravelAgencySchema() {
     priceRange: '₹₹',
     sameAs: [
       'https://wa.me/916232323482',
+      'https://www.instagram.com/kalpvriksh.hospitality/',
+      'https://www.facebook.com/share/1C9zjbGzcH/',
+      'https://www.linkedin.com/company/kalpvrikshhospitality/',
     ],
   };
 }
@@ -228,18 +263,18 @@ function buildPackageSchema(pkg, imagePath) {
   return {
     '@context': 'https://schema.org',
     '@type': 'TouristTrip',
-    name: `${pkg.name} Tour Package`,
+    name: pkg.seoTitle || `${pkg.name} Tour Package`,
     description: pkg.description,
     touristType: pkg.type === 'international' ? 'International' : 'Domestic',
     image: absoluteUrl(imagePath),
-    url: absoluteUrl(`/package.html?id=${pkg.id}`),
+    url: absoluteUrl(`/package/${pkg.id}/`),
     provider: getTravelAgencySchema(),
     offers: {
       '@type': 'Offer',
       price: String(pkg.price),
       priceCurrency: 'INR',
       availability: 'https://schema.org/InStock',
-      url: absoluteUrl(`/package.html?id=${pkg.id}`),
+      url: absoluteUrl(`/package/${pkg.id}/`),
     },
   };
 }
@@ -255,7 +290,7 @@ function buildArticleSchema(blog, imagePath) {
     headline: blog.title,
     description: blog.excerpt,
     image: absoluteUrl(imagePath),
-    url: absoluteUrl(`/blog.html?id=${blog.id}`),
+    url: absoluteUrl(`/blog/${blog.id}/`),
     datePublished,
     author: {
       '@type': 'Organization',
@@ -270,7 +305,7 @@ function buildArticleSchema(blog, imagePath) {
         url: absoluteUrl('img/logo.png'),
       },
     },
-    mainEntityOfPage: absoluteUrl(`/blog.html?id=${blog.id}`),
+    mainEntityOfPage: absoluteUrl(`/blog/${blog.id}/`),
   };
 }
 
@@ -286,6 +321,7 @@ function updatePageSEO(options = {}) {
   if (title) document.title = title;
   if (description) setMetaTag('description', description);
 
+  setMetaTag('keywords', normalizeKeywords(options.keywords));
   setMetaTag('robots', options.robots || 'index, follow');
   setMetaTag('author', SEO_CONFIG.siteName);
   setMetaTag('theme-color', SEO_CONFIG.themeColor);

@@ -311,7 +311,7 @@ function renderPackageCard(pkg) {
       <a href="${getPackageUrl(pkg.id)}" class="card-link">
         <article class="card">
           <div class="card__image">
-            <img src="${imgSrc}" alt="${pkg.name}" loading="lazy">
+            <img src="${imgSrc}" alt="${pkg.seoTitle || pkg.name}" loading="lazy">
           </div>
           <div class="card__body">
             <h3 class="card__title">${pkg.name}</h3>
@@ -814,7 +814,7 @@ function initSearchForm() {
 
       if (match) {
 
-        window.location.href = `package.html?id=${match.id}`;
+        window.location.href = getPackageUrl(match.id);
 
         return;
 
@@ -862,9 +862,8 @@ function initPackagePage() {
 
 
 
-  const params = new URLSearchParams(window.location.search);
-
-  const id = params.get('id');
+  const id = document.documentElement.dataset.package
+    || new URLSearchParams(window.location.search).get('id');
 
   const pkg = PACKAGES[id];
 
@@ -904,17 +903,24 @@ function initPackagePage() {
 
 
 
-  document.title = `${pkg.name} Tour Package | Kalpvriksh Hospitality`;
+  const pageTitle = pkg.seoTitle
+    ? `${pkg.seoTitle} | Kalpvriksh Hospitality`
+    : `${pkg.name} Tour Package | Kalpvriksh Hospitality`;
+  const heading = pkg.seoTitle || pkg.name;
+  document.title = pageTitle;
   const img = getImageByKey(pkg.imageKey);
-  const description = `${pkg.description.substring(0, 155)}…`;
+  const description = pkg.metaDescription || (pkg.description.length > 155
+    ? `${pkg.description.substring(0, 155).trim()}…`
+    : pkg.description);
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) metaDesc.content = description;
 
   if (window.SEO) {
     SEO.updatePage({
-      title: `${pkg.name} Tour Package | Kalpvriksh Hospitality`,
+      title: pageTitle,
       description,
-      canonicalPath: `/package.html?id=${pkg.id}`,
+      keywords: pkg.keywords,
+      canonicalPath: `/package/${pkg.id}/`,
       image: img,
       type: 'website',
       jsonLd: SEO.buildPackageSchema(pkg, img),
@@ -963,6 +969,55 @@ function initPackagePage() {
 
   const exclusions = pkg.exclusions.map((i) => `<li>${i}</li>`).join('');
 
+  const notes = (pkg.notes || []).map((note) => `<li>${note}</li>`).join('');
+
+  const rates = pkg.rates
+    ? `<div class="package-section fade-in">
+              <h2>Package Rates</h2>
+              <p>${pkg.rates.caption}</p>
+              <div class="package-table-wrap">
+                <table class="package-table">
+                  <thead>
+                    <tr>
+                      <th>Group</th>
+                      ${pkg.rates.columns.map((column) => `<th>${column}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${pkg.rates.rows.map((row) => `<tr>${row.map((cell, index) => `<${index === 0 ? 'th' : 'td'}>${index === 0 ? cell : formatPrice(cell)}</${index === 0 ? 'th' : 'td'}>`).join('')}</tr>`).join('')}
+                  </tbody>
+                </table>
+              </div>
+              ${pkg.rates.extras?.length ? `<ul class="package-list package-list--included">${pkg.rates.extras.map((extra) => `<li>${extra}</li>`).join('')}</ul>` : ''}
+            </div>`
+    : '';
+
+  const hotels = pkg.hotels?.length
+    ? `<div class="package-section fade-in">
+              <h2>Partner Hotels</h2>
+              <div class="package-table-wrap">
+                <table class="package-table">
+                  <thead>
+                    <tr>
+                      <th>Destination</th>
+                      ${pkg.rates.columns.map((column) => `<th>${column}</th>`).join('')}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${pkg.hotels.map((stay) => `<tr><th>${stay.destination}</th>${stay.categories.map((names) => `<td>${names.join('<br>')}</td>`).join('')}</tr>`).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>`
+    : '';
+
+  const notesSection = notes
+    ? `<div class="package-section fade-in">
+              <h2>Good to Know</h2>
+              <ul class="package-list package-list--included">${notes}</ul>
+            </div>`
+    : '';
+
 
 
   const contactParams = new URLSearchParams({ destination: pkg.name, package: pkg.id });
@@ -975,7 +1030,7 @@ function initPackagePage() {
 
       <div class="package-hero__bg">
 
-        <img src="${img}" alt="${pkg.name}">
+        <img src="${img}" alt="${heading}">
 
       </div>
 
@@ -999,7 +1054,7 @@ function initPackagePage() {
 
           <span class="package-hero__badge">${typeLabel} &bull; ${pkg.region}</span>
 
-          <h1>${pkg.name}</h1>
+          <h1>${heading}</h1>
 
           <p class="package-hero__tagline">${pkg.tagline}</p>
 
@@ -1081,6 +1136,10 @@ function initPackagePage() {
 
             </div>
 
+            ${rates}
+            ${hotels}
+            ${notesSection}
+
           </div>
 
 
@@ -1099,7 +1158,7 @@ function initPackagePage() {
 
               </div>
 
-              <p class="package-booking-card__note">${pkg.duration} &bull; Taxes extra as applicable</p>
+              <p class="package-booking-card__note">${pkg.duration}${pkg.priceNote ? ` &bull; ${pkg.priceNote}` : ' &bull; Taxes extra as applicable'}</p>
 
               <a href="contact.html?${contactParams.toString()}" class="btn btn--primary btn--lg" style="width:100%;">Book This Package</a>
 
@@ -1227,8 +1286,8 @@ function initBlogPage() {
   const container = document.getElementById('blog-page');
   if (!container) return;
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
+  const id = document.documentElement.dataset.blog
+    || new URLSearchParams(window.location.search).get('id');
   const blog = BLOGS[id];
 
   if (!blog) {
@@ -1263,7 +1322,7 @@ function initBlogPage() {
     SEO.updatePage({
       title: `${blog.title} | Kalpvriksh Hospitality`,
       description: blog.excerpt,
-      canonicalPath: `/blog.html?id=${blog.id}`,
+      canonicalPath: `/blog/${blog.id}/`,
       image: img,
       type: 'article',
       jsonLd: SEO.buildArticleSchema(blog, img),
